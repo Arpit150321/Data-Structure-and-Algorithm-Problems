@@ -10,8 +10,12 @@ import java.util.Scanner;
 public class Q1795A_Two_Towers {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        
+        //Total test cases T
         int T = sc.nextInt();
+        
         while(T > 0){
+            
             int n,m;
             n = sc.nextInt();
             m = sc.nextInt();
@@ -21,17 +25,27 @@ public class Q1795A_Two_Towers {
 
             boolean check1 = checkPattern(s1, n);
             boolean check2 = checkPattern(s2, m);
+            
+            //CHECK Both String doesn't contain BB or RR
             if(check1 && check2){
                 System.out.println("YES");
             }
+            
+            //CHECK Both String contain BB or RR
             else if(!check1 && !check2){
                 System.out.println("NO");
             }
+            
+            //Only One Tower contain BB or RR
             else{
                 int flag = 0;
+                
+                //CHECK First Tower Contain BB or RR
                 if(!check1){
                     flag = 1;
                 }
+                
+                //First Tower contain BB or RR
                 if(flag == 1){
                     while(s1.charAt(s1.length()-1) != s2.charAt(s2.length()-1)){
                         s2 = s2 + s1.charAt(s1.length()-1);
@@ -44,6 +58,8 @@ public class Q1795A_Two_Towers {
                         System.out.println("NO");
                     }
                 }
+                
+                //Second Tower Contain BB or RR
                 else{
                     while(s1.charAt(s1.length()-1) != s2.charAt(s2.length()-1)){
                         s1 = s1 + s2.charAt(s2.length()-1);
@@ -60,6 +76,8 @@ public class Q1795A_Two_Towers {
             T --;
         }
     }
+    
+    //substring function which is make the pair the of neighbour block like (RRBRBR) --> (RR,RB,BR,RB,BR)
     static boolean checkPattern(String s, int n){
         ArrayList<String> str = new ArrayList<>();
         for (int i = 0; i < n-1; i++){
