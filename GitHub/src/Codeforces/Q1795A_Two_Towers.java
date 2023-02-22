@@ -1,5 +1,5 @@
 package Codeforces;
-//Make substring function which is make the pari the of neighbour block like (RRBRBR) --> (RR,RB,BR,RB,BR)
+//Make substring function which is make the pair the of neighbour block like (RRBRBR) --> (RR,RB,BR,RB,BR)
 //Check that if both tower have BB or RR pair than return yes
 //Check that if both tower doesn't have BB or RR pair than return no
 //Check that if Only one tower has BB or RR than check top block of both pair
