@@ -4,7 +4,7 @@ package Codeforces;
 //Check that if both tower doesn't have BB or RR pair than return no
 //Check that if Only one tower has BB or RR than check top block of both pair
 //If both top block are same than return no
-//Otherwise move the top block from tower which contain BB or RR pair to other tower until the both tower doesn't have BB or RR pair.
+//Otherwise move the top block from tower which contain BB or RR pair to other tower until the both tower doesn't have same top block.
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Q1795A_Two_Towers {
